@@ -1,0 +1,61 @@
+
+AWS console 
+ - add repo in aws amplify
+
+TERMINAL
+ - npm install -g @aws-amplify/cli
+ - amplify configure
+
+Add Backend
+ - go to amplify console 
+ - select backend - copy  
+ - terminal : amplify init --appId your-app-id
+ -amplify console 
+
+  ((((Pro tip: Try "amplify add api" to create a backend API and then "amplify publish" to deploy everything)))
+
+
+
+ADD AUTHENTICATION
+  - Install libraries 
+  npm install aws-amplify @aws-amplify/ui-react
+
+Add Authentiction
+  amplify add auth
+
+  Deploy auth: 
+  amplify push --y
+
+
+index.js
+ import Amplify from 'aws-amplify';
+ import config from './aws-exports';
+ Amplify.configure(config);
+
+APP.js
+    import React from 'react';
+    import logo from './logo.svg';
+    import './App.css';
+    import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
+
+    function App() {
+    return (
+        <div className="App">
+        <header>
+            <img src={logo} className="App-logo" alt="logo" />
+        </header>
+        <AmplifySignOut />
+        </div>
+    );
+    }
+
+    export default withAuthenticator(App);
+
+GRAPHQL API
+ - amplify add api
+ - check the schema
+ - To view the Amplify app in your account run :   - amplify console
+   
+
+
+
