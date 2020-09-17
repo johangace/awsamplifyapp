@@ -57,5 +57,7 @@ GRAPHQL API
  - To view the Amplify app in your account run :   - amplify console
    
 
-
-
+Create Storage Service
+- amplify add storage
+change schema&
+- amplify push --yy
